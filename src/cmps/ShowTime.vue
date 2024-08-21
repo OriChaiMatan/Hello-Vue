@@ -1,5 +1,5 @@
 <template>
-  <section class="show-time">
+  <section class="show-time" :class="{'dark-mode': isDarkMode}" @click="toggleBackground">
     <img :src="seasonImage" :alt="currentSeason" />
     <span>{{ currentTime }}</span>
   </section>
@@ -16,6 +16,7 @@ export default {
     return {
       currentTime: this.getCurrentTime(),
       currentSeason: this.getCurrentSeason(),
+      isDarkMode: false,
       seasonImages: {
         spring: springImage,
         summer: summerImage,
@@ -43,31 +44,49 @@ export default {
       }, 1000);
     },
     getCurrentSeason() {
-      const month = new Date().getMonth(); // Get the current month (0-11)
+      const month = new Date().getMonth(); 
       if (month >= 2 && month <= 4) return 'spring';
       if (month >= 5 && month <= 7) return 'summer';
       if (month >= 8 && month <= 10) return 'autumn';
-      return 'winter'; // Default for months 11, 0, 1
+      return 'winter';
+    },
+    toggleBackground() {
+      this.isDarkMode = !this.isDarkMode; 
     },
   },
 };
 </script>
 
-<style scoped>
+<style>
 .show-time {
   text-align: center;
+  padding: 20px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  border-radius: 15px;
 }
 
-img {
+.show-time img {
   width: 300px;
   height: auto;
   display: block;
   margin: 0 auto;
 }
 
-span {
+.show-time span {
   display: block;
   margin-top: 20px;
   font-size: 24px;
+}
+
+.show-time.dark-mode {
+  background-color: #85d0eb; 
+  color: white; 
+  border: 2px solid rgb(206, 206, 206);
+}
+
+.show-time {
+  background-color: #fffefe; 
+  border: 2px solid black;
 }
 </style>
