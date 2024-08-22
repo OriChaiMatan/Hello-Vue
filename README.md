@@ -18,7 +18,7 @@ This Vue app includes several components to demonstrate basic functionality and 
 ## Installation
 1. Clone the repository:
    ```bash
-   https://github.com/OriChaiMatan/Hello-Angular.git
+   https://github.com/OriChaiMatan/Hello-Vue.git
 
 2. Install dependencies:
    ```bash
