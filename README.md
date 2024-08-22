@@ -1,7 +1,9 @@
 # Hello-Vue App
 Welcome to my Vue Practice App! This project is a simple Vue application that I built to take my first steps in this powerful framework. It's a practice project designed to help me learn and improve my Vue skills.
-<img alt="Screenshot 2024-06-19 192535" src=![image](https://github.com/user-attachments/assets/019795df-f4ba-47d7-a943-0718c2839970)
->
+
+
+![image](https://github.com/user-attachments/assets/c572299d-3eeb-4dcd-afb4-af2c6b207c9a)
+
 ## Project Overview
 This Vue app includes several components to demonstrate basic functionality and practices in Vue:
 - **Season-Clock**: Shows the current season and a running clock, with a toggle feature for dark and light background colors.
