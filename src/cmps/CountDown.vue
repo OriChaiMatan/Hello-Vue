@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import doneSound from '../assets/sounds/done.mp3';
 export default {
   props: {
     targetTime: {
@@ -15,7 +16,8 @@ export default {
   },
   data() {
     return {
-      remainingTime: this.calculateRemainingTime()
+      remainingTime: this.calculateRemainingTime(),
+      timeoutSound: new Audio(doneSound)
     };
   },
   computed: {
@@ -44,6 +46,8 @@ export default {
 
         if (this.remainingTime <= 0) {
           clearInterval(this.countdownInterval);
+          this.timeoutSound.play(); 
+          this.$emit('due');
         }
       }, 1000);
     },

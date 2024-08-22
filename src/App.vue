@@ -1,6 +1,6 @@
 <template>
   <div>Hey Vue
-    <CountDown :targetTime="Date.now() + 1000 * 60 * 0.5" />
+    <CountDown :targetTime="Date.now() + 1000 * 60 * 0.25" @due="handleDueEvent" />
   </div>
 </template>
 
@@ -11,6 +11,11 @@ export default {
   components: {
     ShowTime,
     CountDown,
+  },
+  methods: {
+    handleDueEvent() {
+      alert('Time is up!');
+    }
   },
 };
 </script>
