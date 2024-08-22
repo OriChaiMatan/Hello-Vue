@@ -1,5 +1,6 @@
 <template>
   <section class="count-down" :style="countdownStyle">
+    <h1 class="title">Count Down</h1>
     <span>{{ formattedTime }}</span>
   </section>
 </template>
@@ -56,10 +57,16 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .count-down {
   font-size: 24px;
   font-weight: bold;
   text-align: center;
+  background: #e6e6e9;
+  padding: 10px;
+  border-radius: 15px;
 }
+.title{
+    color: #376ab2;
+  }
 </style>
