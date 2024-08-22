@@ -18,17 +18,20 @@
       <MouseMonitor v-if="route === 'MouseMonitor'" />
       <WhoWatch v-if="route === 'WhoWatch'" />
       <ShowTime v-if="route === 'ShowTime'" />
+      <HomePage v-if="route === 'Home'" />
     </div>
   </section>
 </template>
 
 <script>
 import CountDown from "./cmps/CountDown.vue";
+import HomePage from './cmps/HomePage.vue';
 import MouseMonitor from "./cmps/MouseMonitor.vue";
 import ShowTime from "./cmps/ShowTime.vue";
 import WhoWatch from "./cmps/WhoWatch.vue";
 export default {
   components: {
+    HomePage,
     ShowTime,
     CountDown,
     WhoWatch,
@@ -36,7 +39,7 @@ export default {
   },
   data() {
     return {
-      route: "ShowTime",
+      route: "Home",
     };
   },
   methods: {
@@ -51,7 +54,6 @@ export default {
 .app {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
 .app-header {
